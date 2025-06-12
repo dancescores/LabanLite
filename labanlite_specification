@@ -15,7 +15,7 @@ Token Format
     Each token is a series of characters that describe one unit of movement.
     They are always constructed in the same order:
 
-    BODYPART DURATION DIRECTION FLOW SPACE TIME LEVEL WEIGHT SPECIAL
+    BODYPART DURATION DIRECTION FLOW SPACE LEVEL TIME WEIGHT SPECIAL
 
     Example:
     lA3FR52M17twist
