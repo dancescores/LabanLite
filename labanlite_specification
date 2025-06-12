@@ -66,34 +66,36 @@ E.g., Sustained ↔ Sudden
 
 8. Weight (1 digit)
 Physical effort (0–9)
-E.g., Light ↔ Strong
+E.g., Light ↔ Heavy
 
 9. Special (optional)
-Word tag for gesture type, shape, or intent
-Examples: push, twist, jump, hold
+Word / phrase tag for gesture type, shape, or intent, dynamic quality or anything else you want to encode.
+Multiple words should be separated by "_".
+Examples: push, twist, fiercely, immediate, shiny, evil_grin
 
 Token Examples
 
     1. lA3FR52M17twist
 → Left Arm, 3 counts, Forward-Right, Flow 5, Space 2, Middle, Time 1, Weight 7, Special: twist
-   
+
     2. rT1BL43L89
 → Right Torso, 1 count, Back-Left, Flow 4, Space 3, Low, Time 8, Weight 9
-    
-    3. H2FU87H95hold
-→ Head, 2 counts, Forward-Up, Flow 8, Space 7, High, Time 9, Weight 5, Special: hold
+
+    3. H2FU87H95hold_tightly
+→ Head, 2 counts, Forward-Up, Flow 8, Space 7, High, Time 9, Weight 5, Special: hold tightly
 
 Special Characters
 
     • , = tokens begin simultaneously
     • . = 1 unit of time passes
     • : = 1/2 unit of time
-    • :: = 1/4, ::: = 1/8 etc     <---------- doesn't quite work like I want it to
+    • :: = 1/4, ::: = 1/8 etc     <---------- attempt to create a minim-crotchett-quaver type system, non functional
     • ! = end of part
     • !! = end of choreography
     • x[] = repeat token(s) x times (return directly to token beginning position for repeat)
     • xr[] = repeat token(s) x times (retrograde through token to beginning position for repeat)
     • x() = dancer x performs these tokens
+    • _ = word separator
 
 Chaining Movements
 
@@ -109,7 +111,7 @@ Delayed Sequence:
 lA3F52M17push...rA3F52M17push
 → Right arm starts three counts after left.
 
-Partial Count Timing:
+Partial Count Timing (non functional):
 lA1F52M17push:rA1F52M17push
 → Right arm begins halfway through left's 1-count punch.
 lA1F52M17push::rA1F52M17push
@@ -128,13 +130,13 @@ lHBR,rAR,PU → Left Hand Back-Right, Right Arm Right, Pelvis Up
 
 Duet Example
 
-2T90FRANTIC1(lhU,TRB,PD)2(HD,PU);
+2T90FRANTIC_MINIMALIST_RED1(lhU,TRB,PD)2(HD,PU);
 1(
 2[T4FL56M86coil],P1I33L21tuck...rH3U12H07raise
-3[lH2D44L33].C3F25M41bend...:C4B83M52,
+3[lH2D44L33].C3F25M41bend_stiffly...:C4B83M52,
 rF2FR42L27step,lH3U11H43reach:...rH1D35M06drop,
 P3BU54M19tilt...2[T2FU23H20extend]..
-lL4BR71L38kick,rL2BL41L14kick....
+lL4BR71L38kick,rL2BL41L14kick_calm....
 lA1L24M07swipe.rA1R21M06swipe,H2U63H18look!
 )
 2(
@@ -147,7 +149,7 @@ Code Order Reasoning
     • Starts with body and timing info — most useful when scanning movement
     • Alternating letters and numbers aid readability
     • 0–9 values are ordered alphabetically: Flow - Space - Time - Weight
-    • 0-9 values are broken into pairs for memorability: flow-SPACE-level-TIME-weight
+    • 0-9 values are broken into pairs for memorability: flow-SPACE level TIME-weight
 
 Use Cases
 
@@ -155,14 +157,15 @@ Use Cases
     • Digital motion capture markup
     • Dataset compression
     • Creative generative dance systems
+    • Labanotation Archivism
 
 Future Features?
 
     • Expanded body taxonomy
     • Symmetry/reflection notation
     • Floor plans, perhaps using a grid navigation system to represent the dancer's pathway
-Example: URULLDURLDDLRUDURLLDDLDLL      This could even be expanded to include information about where each token happens
-Example: URURRL|LR||UUURD|D|
+        This could even be expanded to include information about where each token happens (|)
+        Example: URURRL|LR||UUURD|D|
 
 Author
 Developed by Jake Bradnock, 2025.
