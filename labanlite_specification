@@ -1,21 +1,27 @@
 LabanLite ASCII Notation Specification (v0.1)
-
+-----------------------------------------------------------------------------
 Purpose
 
-    LabanLite ASCII is a compact, ASCII-safe format inspired by Labanotation. It represents movement in a linear, readable format.
-
+    LabanLite ASCII is a compact, ASCII-safe format inspired by Labanotation. It represents movement in a shorthand, linear, readable format.
+-----------------------------------------------------------------------------
 Goal
 
     Enable choreography, motion analysis, and training using short, memory-friendly tokens.
-    Each token is a series of characters that describe one unit of movement.
+    Allow precision AND creativity with the notation system itself.
 
+-----------------------------------------------------------------------------
 Token Format
 
-    BodyPart Duration Direction Flow Space Level Time Weight Special
+    Each token is a series of characters that describe one unit of movement.
+    They are always constructed in the same order:
+
+    BODYPART DURATION DIRECTION FLOW SPACE LEVEL TIME WEIGHT SPECIAL
 
     Example:
     lA3FR52M17twist
 
+
+-----------------------------------------------------------------------------
 Field Breakdown
 
 1. BodyPart (1-2 letters)
@@ -24,11 +30,8 @@ Common codes:
     • lA = Left Arm
     • rA = Right Arm
     • lL = Left Leg
-    • rL = Right Leg
-    • lF = Left Foot
     • rF = Right Foot
     • lH = Left Hand
-    • rH = Right Hand
     • H = Head
     • C = Chest
     • T = Torso
@@ -72,7 +75,7 @@ E.g., Light ↔ Heavy
 Word / phrase tag for gesture type, shape, or intent, dynamic quality or anything else you want to encode.
 Multiple words should be separated by "_".
 Examples: push, twist, fiercely, immediate, shiny, evil_grin
-
+-----------------------------------------------------------------------------
 Token Examples
 
     1. lA3FR52M17twist
@@ -83,7 +86,7 @@ Token Examples
 
     3. H2FU87H95hold_tightly
 → Head, 2 counts, Forward-Up, Flow 8, Space 7, High, Time 9, Weight 5, Special: hold tightly
-
+-----------------------------------------------------------------------------
 Special Characters
 
     • , = tokens begin simultaneously
@@ -96,8 +99,14 @@ Special Characters
     • xr[] = repeat token(s) x times (retrograde through token to beginning position for repeat)
     • x() = dancer x performs these tokens
     • _ = word separator
+    • %y{} = Define motif/phrase, labelled as x
+    • {y} = repeat motif x
 
-Chaining Movements
+    replace x with any number
+    replace y with any character, word or phrase
+
+-----------------------------------------------------------------------------
+Movement Order + Timing
 
 Simultaneous Actions:
 lA3F52M17push,rA3F52M17push
@@ -111,23 +120,24 @@ Delayed Sequence:
 lA3F52M17push...rA3F52M17push
 → Right arm starts three counts after left.
 
-Partial Count Timing (non functional):
+Partial Count Timing:
 lA1F52M17push:rA1F52M17push
 → Right arm begins halfway through left's 1-count punch.
-lA1F52M17push::rA1F52M17push
-→ Right arm begins a quarter-count into left's movement.
+
+******lA1F52M17push::rA1F52M17push
+→ Right arm begins a quarter-count into left's movement.****** NON-FUNCTIONAL
 
 Note: Full stops (.) come AFTER the token on their count.
-
+-----------------------------------------------------------------------------
 Setter Strings
 
 The first line of choreography should begin with a setter string followed by a semi-colon (;). This sets global parameters.
 Examples:
-    • 4T135bpmGLAMOROUS; → 4 dancers, tempo 135 BPM, glitter-covered
-    • 1S10dWET; → Solo, 10 seconds duration, underwater
+    • 4T135GLAMOROUS; → 4 dancers, tempo 135 BPM, glitter-covered
+    • 1S1WET; → Solo, 1 second time-unit duration, underwater
 Optional Starting Positions:
 lHBR,rAR,PU → Left Hand Back-Right, Right Arm Right, Pelvis Up
-
+-----------------------------------------------------------------------------
 Duet Example
 
 2T90FRANTIC_MINIMALIST_RED1(lhU,TRB,PD)2(HD,PU);
@@ -140,17 +150,16 @@ lL4BR71L38kick,rL2BL41L14kick_calm....
 lA1L24M07swipe.rA1R21M06swipe,H2U63H18look!
 )
 2(
-..........:10[P1B33L21tuck]..:.4r[rH3U12H07]...:lH2D44L33].C3F25M41bend:....
+..........:10[P1B33L21tuck]..:.%1{4r[rH1U12H07]:lH2D44L33].}{1}C3F25M41bend:..{1}
 rA1R21M06swipe,H2U63H18look!
 )!!
+-----------------------------------------------------------------------------
+Token Code Order Reasoning
 
-Code Order Reasoning
-
-    • Starts with body and timing info — most useful when scanning movement
+    • Starts with bodypart and timing information — most useful when scanning through choreography
     • Alternating letters and numbers aid readability
-    • 0–9 values are ordered alphabetically: Flow - Space - Time - Weight
-    • 0-9 values are broken into pairs for memorability: flow-SPACE level TIME-weight
-
+    • 0–9 values (efforts) are ordered alphabetically and broken into pairs for memorability: Flow-SPACE level TIME-Weight
+-----------------------------------------------------------------------------
 Use Cases
 
     • Choreographic sketching
@@ -158,15 +167,17 @@ Use Cases
     • Dataset compression
     • Creative generative dance systems
     • Labanotation Archivism
-
+-----------------------------------------------------------------------------
 Future Features?
 
-    • Expanded body taxonomy
-    • Symmetry/reflection notation
-    • Floor plans, perhaps using a grid navigation system to represent the dancer's pathway
-        This could even be expanded to include information about where each token happens (|)
-        Example: URURRL|LR||UUURD|D|
-
+    • Expanded body taxonomy, potentially medical-grade
+    • Symmetry/reflection notation, other choreographic modifiers
+    • Floor plans or step notation, perhaps using a grid navigation system to represent the dancer's pathway
+        This could even be expanded to include information about where each token group happens (|)
+        Example: UR|URRL||LR||UUURD|D|
+    • Additional structural and ordering features
+    • Enhanced timing system
+-----------------------------------------------------------------------------
 Author
 Developed by Jake Bradnock, 2025.
 LabanLite is freely shareable and extensible.
