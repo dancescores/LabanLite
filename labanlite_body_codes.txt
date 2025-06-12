@@ -1,0 +1,59 @@
+lA   = Left Arm
+rA   = Right Arm
+lL   = Left Leg
+rL   = Right Leg
+lF   = Left Foot
+rF   = Right Foot
+lH   = Left Hand
+rH   = Right Hand
+H    = Head
+C    = Chest
+T    = Torso
+P    = Pelvis
+lS   = Left Shoulder
+rS   = Right Shoulder
+lE   = Left Elbow
+rE   = Right Elbow
+lK   = Left Knee
+rK   = Right Knee
+lW   = Left Wrist
+rW   = Right Wrist
+lB   = Left Buttock
+rB   = Right Buttock
+N    = Neck
+Bk   = Back (general)
+Ab   = Abdomen
+J    = Jaw
+E    = Eyes
+
+Outliers (less human-friendly, should probably be expanded to 3 characters):
+lo   = Left tOes
+ro   = Right tOes
+le  = Left hEel
+re  = Right hEel
+ln  = Left aNkle
+rn  = Right aNkle
+
+Fingers:
+lt = left thumb
+li = left index
+lm = left middle
+lr = left ring
+ll = left little
+rt = right thumb
+ri = right index
+rm = right middle
+rr = right ring
+rl = right litte
+
+Toes:
+lb = left big
+ls = left second
+lc = left central
+lf = left fourth
+lu = left ultimate (little toe)
+rb = right big
+rs = right second
+rc = right central
+rf = right fourth
+ru = right ultimate (little toe)
