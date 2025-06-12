@@ -98,21 +98,21 @@ Special Characters
 Chaining Movements
 
 Simultaneous Actions:
-lA3F52M17punch,rA3F52M17punch
-→ Both arms punch forward together for 3 counts.
+lA3F52M17dart,rA3F52M17dart
+→ Both arms dart forward together for 3 counts.
 
 Staggered Start:
-lA3F52M17punch.rA3F52M17punch
+lA3F52M17press.rA3F52M17press
 → Right arm starts one count after left.
 
 Delayed Sequence:
-lA3F52M17punch...rA3F52M17punch
+lA3F52M17point...rA3F52M17point
 → Right arm starts three counts after left.
 
 Partial Count Timing:
-lA1F52M17punch:rA1F52M17punch
+lA1F52M17shake:rA1F52M17shake
 → Right arm begins halfway through left's 1-count punch.
-lA1F52M17punch::rA1F52M17punch
+lA1F52M17fall::rA1F52M17rise
 → Right arm begins a quarter-count into left's movement.
 
 Note: Full stops (.) come AFTER the token on their count.
