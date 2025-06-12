@@ -146,8 +146,8 @@ Code Order Reasoning
 
     • Starts with body and timing info — most useful when scanning movement
     • Alternating letters and numbers aid readability
-    • 0–9 values are ordered: Flow - Space - Level - Time - Weight
-    • Think of the structure: flow-SPACE-level-TIME-weight
+    • 0–9 values are ordered alphabetically: Flow - Space - Time - Weight
+    • 0-9 values are broken into pairs for memorability: flow-SPACE-level-TIME-weight
 
 Use Cases
 
@@ -162,7 +162,9 @@ Future Features?
     • Symmetry/reflection notation
     • Floor plans, perhaps using a grid navigation system to represent the dancer's pathway
 Example: URULLDURLDDLRUDURLLDDLDLL
+
 Author
 Developed by Jake Bradnock, 2025.
-LabanLite is freely shareable and extensible. Use it in dance, robotics, animation, or beyond.
+LabanLite is freely shareable and extensible.
+e-mail jakebradnock@proton.me
 ­
