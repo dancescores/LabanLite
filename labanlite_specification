@@ -88,7 +88,7 @@ Special Characters
     • , = tokens begin simultaneously
     • . = 1 unit of time passes
     • : = 1/2 unit of time
-    • :: = 1/4, ::: = 1/8 etc
+    • :: = 1/4, ::: = 1/8 etc     <---------- doesn't quite work like I want it to
     • ! = end of part
     • !! = end of choreography
     • x[] = repeat token(s) x times (return directly to token beginning position for repeat)
@@ -138,7 +138,7 @@ lL4BR71L38kick,rL2BL41L14kick....
 lA1L24M07swipe.rA1R21M06swipe,H2U63H18look!
 )
 2(
-10[P1B33L21tuck]..:.4r[rH3U12H07]...::lH2D44L33].C3F25M41bend::....
+..........:10[P1B33L21tuck]..:.4r[rH3U12H07]...:lH2D44L33].C3F25M41bend:....
 rA1R21M06swipe,H2U63H18look!
 )!!
 
