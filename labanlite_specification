@@ -97,10 +97,16 @@ Special Characters
     • !! = end of choreography
     • x[] = repeat token(s) x times (return directly to token beginning position for repeat)
     • xr[] = repeat token(s) x times (retrograde through token to beginning position for repeat)
-    • x() = dancer x performs these tokens
+    • x() = dancer x performs these tokens.
     • _ = word separator
-    • %y{} = Define motif/phrase, labelled as x
-    • {y} = repeat motif x
+    • %y{} = Define motif/phrase, labelled as y, can be character, word, phrase
+    • {y} = repeat motif y
+    • x{y} = repeat motif y, x times
+    • r{y} = repeat motif y in retrograde
+    • i{y} = repeat motif y inverted
+    • * = denotes moments of unison between dancers, symbolic and mostly for cohesion and co-ordination
+    • ** = duet *** = trio etc.
+    •
 
     replace x with any number
     replace y with any character, word or phrase
@@ -123,6 +129,11 @@ lA3F52M17push...rA3F52M17push
 Partial Count Timing:
 lA1F52M17push:rA1F52M17push
 → Right arm begins halfway through left's 1-count punch.
+
+Note on sequencing:
+time within brackets () is linear, bracketted parts in sequence happen simultaneously
+A(...)B(...)C(...)
+→ Dancers A, B, and C doing nothing for 3 counts TOTAL
 
 ******lA1F52M17push::rA1F52M17push
 → Right arm begins a quarter-count into left's movement.****** NON-FUNCTIONAL
@@ -150,9 +161,11 @@ lL4BR71L38kick,rL2BL41L14kick_calm....
 lA1L24M07swipe.rA1R21M06swipe,H2U63H18look!
 )
 2(
-..........:10[P1B33L21tuck]..:.%1{4r[rH1U12H07]:lH2D44L33].}{1}C3F25M41bend:..{1}
+..........:10[P1B33L21tuck]..:.%1{4r[rH1U12H07]:lH2D44L33].}{1}C3F25M41bend:..i{1}
 rA1R21M06swipe,H2U63H18look!
 )!!
+
+
 -----------------------------------------------------------------------------
 Token Code Order Reasoning
 
